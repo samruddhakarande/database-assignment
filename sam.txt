@@ -1,0 +1,103 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 3
+Server version: 5.1.38-community MySQL Community Server (GPL)
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| akash              |
+| app                |
+| app1               |
+| app2               |
+| emartdb            |
+| employee           |
+| exam               |
+| exam1              |
+| exam5              |
+| exammysql          |
+| j2eedb             |
+| manedb             |
+| mayur              |
+| my_sqldb           |
+| mydata             |
+| mydb               |
+| mysql              |
+| productcategory    |
+| project            |
+| python             |
+| python_app         |
+| tichadatabse       |
+| timepass           |
+| vita               |
+| x                  |
++--------------------+
+26 rows in set (0.19 sec)
+
+mysql> create database abhishek;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| abhishek           |
+| akash              |
+| app                |
+| app1               |
+| app2               |
+| emartdb            |
+| employee           |
+| exam               |
+| exam1              |
+| exam5              |
+| exammysql          |
+| j2eedb             |
+| manedb             |
+| mayur              |
+| my_sqldb           |
+| mydata             |
+| mydb               |
+| mysql              |
+| productcategory    |
+| project            |
+| python             |
+| python_app         |
+| tichadatabse       |
+| timepass           |
+| vita               |
+| x                  |
++--------------------+
+27 rows in set (0.00 sec)
+
+mysql> use abhishek;
+Database changed
+mysql> create table player
+    -> (
+    ->  id int,
+    -> name varchar(20),
+    -> mobile bigint(10)
+    -> );
+Query OK, 0 rows affected (0.14 sec)
+
+mysql> insert into player values(1,'samru',1234567890);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into player values(2,'mayur',2345678910);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from player;
++------+-------+------------+
+| id   | name  | mobile     |
++------+-------+------------+
+|    1 | samru | 1234567890 |
+|    2 | mayur | 2345678910 |
++------+-------+------------+
+2 rows in set (0.00 sec)
+
+mysql>

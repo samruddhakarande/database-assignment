@@ -100,4 +100,72 @@ mysql> select * from player;
 +------+-------+------------+
 2 rows in set (0.00 sec)
 
+mysql> insert into player values(3,'dd',5678941230);
+Query OK, 1 row affected (0.09 sec)
+
+mysql> update player
+    -> set name=devendra
+    -> ;
+ERROR 1054 (42S22): Unknown column 'devendra' in 'field list'
+mysql> select * from player;
++------+-------+------------+
+| id   | name  | mobile     |
++------+-------+------------+
+|    1 | samru | 1234567890 |
+|    2 | mayur | 2345678910 |
+|    3 | dd    | 5678941230 |
++------+-------+------------+
+3 rows in set (0.00 sec)
+
+mysql> update player
+    -> set name=devendra
+    -> where id=3;
+ERROR 1054 (42S22): Unknown column 'devendra' in 'field list'
+mysql> update player
+    -> set name='devendra'
+    -> where id=3;
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from player;
++------+----------+------------+
+| id   | name     | mobile     |
++------+----------+------------+
+|    1 | samru    | 1234567890 |
+|    2 | mayur    | 2345678910 |
+|    3 | devendra | 5678941230 |
++------+----------+------------+
+3 rows in set (0.00 sec)
+
+mysql> delete from player
+    -> where id=2;
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from player;
++------+----------+------------+
+| id   | name     | mobile     |
++------+----------+------------+
+|    1 | samru    | 1234567890 |
+|    3 | devendra | 5678941230 |
++------+----------+------------+
+2 rows in set (0.00 sec)
+
+mysql> truncate table player;
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> select * from player;
+Empty set (0.00 sec)
+
+mysql> desc table player;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table player' at line 1
+mysql> desc player;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| id     | int(11)     | YES  |     | NULL    |       |
+| name   | varchar(20) | YES  |     | NULL    |       |
+| mobile | bigint(10)  | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.03 sec)
+
 mysql>
